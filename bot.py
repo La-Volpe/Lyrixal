@@ -24,6 +24,8 @@ def get_lyrics(message):
         bot.reply_to(message, lyric)
 MehdiSticker = 'BQADBAADDAIAAsY-4gABkYqH6Pg8d3UC'
 JavadSticker = 'BQADBAADLgQAApv7sgABhbe8T1HBWC4C'
+MohsenSticker = 'BQADBAADfwkAAhRfVQOHXHZgd1N9-gI'
+SinaSticker = 'BQADBAADhAQAApv7sgABfrYz202X0VUC'
 @bot.message_handler(commands=['javad'])
 def javad(message):
     bot.send_sticker(message.chat.id, JavadSticker)
@@ -31,6 +33,15 @@ def javad(message):
 @bot.message_handler(commands=['mehdi','facepalm'])
 def facepalm(message):
     bot.send_sticker(message.chat.id, MehdiSticker)     
+
+@bot.message_handler(commands=['mohsen'])
+def keephydrated(message):
+    bot.send_sticker(message.chat.id, MohsenSticker)      
+
+@bot.message_handler(commands=['sina'])
+def keephydrated(message):
+    bot.send_sticker(message.chat.id, SinaSticker)   
+
 #@bot.message_handler(func=lambda message: True, content_types=['sticker'])
 #def getid(message):
 #    fileid = message.sticker.file_id
