@@ -14,9 +14,13 @@ def fetch_lyrics(artist, song):
     response = request.read()
     xml = response.decode("utf-8")
     return xml
-#Parses the xml and then returns the lyric
+#Parses the xml and then returns the 
 def parser(xml, tag):
     tag = '<'+ tag + '>'
     index = xml.find(tag)
-    lyric = xml[index+7 : len(xml) - 27]
-    return lyric
+    #If the index is -1, it means that the <Lyric> tag is not found, So the lyric does not exist:
+    if index == -1:
+        return "Song not found!"
+    else:
+        lyric = xml[index+7 : len(xml) - 27]
+        return lyric
