@@ -31,6 +31,12 @@ def javad(message):
 @bot.message_handler(commands=['mehdi','facepalm'])
 def facepalm(message):
     bot.send_sticker(message.chat.id, MehdiSticker)     
+
+@bot.message_handler(commands=['mohsen'])
+def keephydrated(message):
+    bot.send_message(message.chat.id, "I want you\n\r\n\r\n\rTo #KeepHydrated!")  
+    
+ 
 #@bot.message_handler(func=lambda message: True, content_types=['sticker'])
 #def getid(message):
 #    fileid = message.sticker.file_id
