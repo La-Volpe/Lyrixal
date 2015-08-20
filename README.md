@@ -5,7 +5,8 @@ A Telegram bot for finding music lyrics, written in Python.
 This this code uses [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI "A Python implementation for the Telegram Bot API.") for connecting to the Telegram Bot API.
 
 ## How to Deploy
-I will write a guide for deployment soon enough. 
+pip install -r requirements
+ensure you are using python 3.4
 
 ## Bot
 There's a working bot deployed on my own computer.
