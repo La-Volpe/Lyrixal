@@ -18,7 +18,7 @@ $ python3 --version
 ```bash
 $ pip install -r requirements
 ```
-* Write your bot token you got from BotFather in `key.txt`:
+* Write your bot token you got from [@BotFather](https://telegram.me/BotFather) in `key.txt`:
 ```bash
 $ echo "THE LONG TOKEN STRING HERE" > key.txt 
 ```
