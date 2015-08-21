@@ -9,6 +9,7 @@ bot = telebot.TeleBot(API_TOKEN)
 def send_message(message):
     bot.reply_to(message, """Use /lyric [artist name]-[songe name]
     Example: /lyric Slipknot-Snuff""")
+
 @bot.message_handler(commands=['lyric'])
 def get_lyrics(message):
     raw = message.text
@@ -22,10 +23,21 @@ def get_lyrics(message):
         xml = utilities.fetch_lyrics(artist, song)
         lyric = utilities.parser(xml, "Lyric")
         bot.reply_to(message, lyric)
+
+# Buncha Easter eggs below
+# They are starting to outgrow the main functionality!
 MehdiSticker = 'BQADBAADDAIAAsY-4gABkYqH6Pg8d3UC'
 JavadSticker = 'BQADBAADLgQAApv7sgABhbe8T1HBWC4C'
 MohsenSticker = 'BQADBAADfwkAAhRfVQOHXHZgd1N9-gI'
 SinaSticker = 'BQADBAADhAQAApv7sgABfrYz202X0VUC'
+
+@bot.message_handler(commands=['easter', 'eggs', 'eastereggs'])
+def javad(message):
+    bot.reply_to(message, """/javad 
+    /mehdi or /facepalm 
+    /mohsen 
+    /sina""")
+
 @bot.message_handler(commands=['javad'])
 def javad(message):
     bot.send_sticker(message.chat.id, JavadSticker)
