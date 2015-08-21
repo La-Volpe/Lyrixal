@@ -30,6 +30,14 @@ MehdiSticker = 'BQADBAADDAIAAsY-4gABkYqH6Pg8d3UC'
 JavadSticker = 'BQADBAADLgQAApv7sgABhbe8T1HBWC4C'
 MohsenSticker = 'BQADBAADfwkAAhRfVQOHXHZgd1N9-gI'
 SinaSticker = 'BQADBAADhAQAApv7sgABfrYz202X0VUC'
+
+@bot.message_handler(commands=['easter', 'eggs', 'eastereggs'])
+def javad(message):
+    bot.reply_to(message, """/javad 
+    /mehdi or /facepalm 
+    /mohsen 
+    /sina""")
+
 @bot.message_handler(commands=['javad'])
 def javad(message):
     bot.send_sticker(message.chat.id, JavadSticker)
