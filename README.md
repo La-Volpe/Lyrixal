@@ -13,4 +13,4 @@ There's a working bot deployed on my own computer.
 [@LyrixalBot](https://telegram.me/LyrixalBot)
 
 ## Licence
-This code is Licensed under MIT License by [Javad Arjmandi](https://github.com/La-Volpe/ "Javad Arjmandi's Github profile").
+This code is Licensed under [MIT License](LICENSE) by [Javad Arjmandi](https://github.com/La-Volpe/ "Javad Arjmandi's Github profile").
