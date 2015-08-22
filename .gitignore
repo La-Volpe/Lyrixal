@@ -1,6 +1,8 @@
 __pycache__/
 telebot/
 key.txt
+key.txt~
 sb.py
 *.pyc
 out.txt
+sina.txt
