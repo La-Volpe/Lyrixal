@@ -22,13 +22,13 @@ def get_lyrics(message):
         info = info.split("-")
         artist = info[0]
         song = info[1]
-        if song == 'Roshani' or 'roshani' or ' roshani' or ' Roshani':
+        xml = utilities.fetch_lyrics(artist, song)
+        lyric = utilities.parser(xml, "Lyric")
+        if song == 'Roshani' or song == 'roshani' or song == ' roshani' or song == ' Roshani':
             with open('sina.txt', 'r') as sina:
                 roshani = sina.read().strip()
             bot.reply_to(message, roshani)
         else:
-            xml = utilities.fetch_lyrics(artist, song)
-            lyric = utilities.parser(xml, "Lyric")
             bot.reply_to(message, lyric)
 @bot.message_handler(commands=['find'])
 def find(message):
@@ -40,13 +40,13 @@ def find(message):
         info = info.split("-")
         artist = info[0]
         song = info[1]
-        if song == 'Roshani' or 'roshani' or ' roshani' or ' Roshani':
+        _json = utilities.fetch_from_wiki(artist, song)
+        response = utilities.response(_json)
+        if song == 'Roshani' or song == 'roshani' or song == ' roshani' or song == ' Roshani':
             with open('sina.txt', 'r') as sina:
                 roshani = sina.read().strip()
             bot.reply_to(message, roshani)
         else:
-            _json = utilities.fetch_from_wiki(artist, song)
-            response = utilities.response(_json)
             bot.reply_to(message, response)
 
 # Buncha Easter eggs below
