@@ -3,3 +3,4 @@ telebot/
 key.txt
 sb.py
 *.pyc
+out.txt
