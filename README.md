@@ -10,6 +10,12 @@ This this code uses [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBo
 $ git clone https://github.com/La-Volpe/Lyrixal.git
 $ cd Lyrixal
 ```
+### Method 1: Using installer script
+Simply run `install.sh` script and follow the instructions it gives you.
+```bash
+$ ./install.sh
+```
+### Method 2: Manual installation
 * Make sure you have Python 3.4+ installed on your machine:
 ```bash
 $ python3 --version
