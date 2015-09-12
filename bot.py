@@ -1,6 +1,5 @@
 import telebot
 import utilities
-from time import sleep
 with open ("key.txt", "r") as key:
     token =  key.read().strip()
 API_TOKEN = token
@@ -91,7 +90,8 @@ def keephydrated(message):
 #    fileid = message.sticker.file_id
 #    bot.reply_to(message, fileid)
 
-if __name__ == '__main__':
-    bot.polling()
-    while True:
-        sleep(300)
+
+bot.polling()
+
+while True:
+    pass
