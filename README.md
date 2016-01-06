@@ -22,7 +22,7 @@ $ python3 --version
 ```
 * Install the requirements:
 ```bash
-$ pip install -r requirements
+# pip install -r requirements
 ```
 * Write your bot token you got from [@BotFather](https://telegram.me/BotFather) in `key.txt`:
 ```bash
