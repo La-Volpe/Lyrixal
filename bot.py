@@ -24,7 +24,7 @@ def get_lyrics(message):
         song = info[1]
         xml = utilities.fetch_lyrics(artist, song)
         lyric = utilities.parser(xml, "Lyric")
-        if song == 'Roshani' or song == 'roshani' or song == ' roshani' or song == ' Roshani':
+        if song.lower().strip() = 'roshani':
             with open('sina.txt', 'r') as sina:
                 roshani = sina.read().strip()
             bot.reply_to(message, roshani)

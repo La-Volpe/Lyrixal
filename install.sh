@@ -1,34 +1,17 @@
 #!/bin/bash
-ansi_reset="\033[0m"
-ansi_bold="\033[1m"
-ansi_backgreen="\033[42m"
-ansi_backred="\033[41m"
-ansi_invert="\e[7m"
-ansi_underline="\e[4m"
-ansi_red="\e[91m"
-ansi_green="\e[92m"
 
-
-echo -e $ansi_bold"Lyrixal Telegram Bot installer"$ansi_reset
-echo "Python3 vertsion check"
+dialog --title 'Lyrixal installer' --msgbox "Welcome to \nLyrixal Telegram Bot installer." 8 45
 py3ver=$(python3 -c 'import sys; print(".".join(map(str, sys.version_info[:3])))')
-echo -e "Installed Python3 version: "$ansi_bold$py3ver$ansi_reset
 if [[ $py3ver == 3\.4* ]]; then
-  echo -e $ansi_green"Running compatibale Python version"$ansi_reset;
-  echo "installing requirements..."
+  dialog --title 'Lyrixal installer' --colors --msgbox "Installed Python3 version: \n\Zb$py3ver\Zn\n\n\Z2Running compatibale Python version!\Zn" 8 45
   if [[ $(pip --version) == pip* ]]; then
-	sudo pip install -r requirements
-	echo -e $ansi_bold"Enter your bot token from @BotFather:"$ansi_reset
-	read user_token
-	echo $user_token > key.txt
-	echo -e $ansi_bold$ansi_green"Install compelete!"$ansi_reset;
+	sudo pip instal requirements
+	dialog --title 'Lyrixal installer' --inputbox "Copy your bot token from @BotFather:" 8 45 2> key.txt
+	dialog --title 'Lyrixal installer' --colors --msgbox "\Z2Install and config COMPLETE! \Zn" 8 45
   else
-	echo -e $ansi_red"pip is not installed"$ansi_reset;
-	echo -e $ansi_bold$ansi_red"Install unsuccessful"$ansi_reset;
+	dialog --title 'Lyrixal installer' --colors --msgbox "'pip' is not installed\n\n\Z1Install failed. \Zn" 8 45
   fi
 else
-	echo -e $ansi_red"Running incompatibale Python version"$ansi_reset;
-	echo -e $ansi_bold$ansi_red"Install unsuccessful"$ansi_reset;
+	dialog --title 'Lyrixal installer' --colors --msgbox "Installed Python3 version: \n\Zb$py3ver\Zn\n\n\Z1Running incompatibale Python version!\Zn" 8 45
+	dialog --title 'Lyrixal installer' --colors --msgbox "\Z1Install failed. \Zn" 8 45
 fi
-
-echo -e $ansireset;
